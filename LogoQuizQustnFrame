@@ -1,0 +1,81 @@
+package nikquiz;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class quizFrame extends JFrame {
+
+	private JPanel contentPane;
+	private String imageName;
+
+	
+	
+	public static void main(String[] args) {
+	
+					quizFrame frame = new quizFrame();
+					frame.setVisible(true);
+			
+	}
+	private void askToleave(){
+		int  choice = JOptionPane.showConfirmDialog(this, "Do u Really want to EXIT","GameZone2016", JOptionPane.YES_NO_OPTION);
+		if(choice==JOptionPane.YES_OPTION){
+			this.setVisible(false);
+			this.dispose();
+		}
+		else {
+			return;
+		}
+	}
+	
+	
+	private void askforAnswer(String correctAns, String imageName, JButton b1){
+		ansframe frame = new ansframe(correctAns,imageName,b1);
+		frame.setVisible(true);
+	}
+
+	
+	public quizFrame()
+	{
+		getContentPane().setBackground(Color.WHITE);
+		this.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e){
+				askToleave();
+			}
+		});
+		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setBounds(100, 100,450,350);
+		contentPane = new JPanel();
+		getContentPane().setLayout(null);
+		setContentPane(contentPane);
+		
+		JButton b1 = new JButton("");
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				askforAnswer("Amazon", "amazon.png", b1);
+			}
+		});
+		b1.setForeground(Color.WHITE);
+		b1.setIcon(new ImageIcon(quizFrame.class.getResource("amazon.png")));
+		b1.setBackground(Color.WHITE);
+		b1.setBounds(46, 35, 254, 216);
+		getContentPane().add(b1);
+		
+		
+		
+		
+	}
+
+}
