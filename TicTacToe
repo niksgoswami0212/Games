@@ -1,0 +1,96 @@
+//import java.awt.BorderLayout;
+//import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.InputMethodListener;
+import java.awt.event.ActionEvent;
+
+public class TicTacToeGame extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	protected static final String X = null;
+	protected static final String Y = null;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		
+					TicTacToeGame frame = new TicTacToeGame();
+					frame.setVisible(true);
+				
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TicTacToeGame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton button = new JButton("");
+		//String X;
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		button.setBounds(12, 12, 90, 65);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("");
+		button_1.setBounds(12, 89, 90, 65);
+		contentPane.add(button_1);
+		
+		JButton button_2 = new JButton("");
+		button_2.setBounds(12,166 , 90, 65);
+		contentPane.add(button_2);
+		
+		JButton button_3 = new JButton("");
+		button_3.setBounds(154, 12, 90, 65);
+		contentPane.add(button_3);
+		
+		JButton button_4 = new JButton("");
+		button_4.setBounds(154, 89, 90, 65);
+		contentPane.add(button_4);
+		
+		JButton button_5 = new JButton("");
+		button_5.setBounds(154, 166, 90, 65);
+		contentPane.add(button_5);
+		
+		JButton button_6 = new JButton("");
+		button_6.setBounds(296, 12, 90, 65);
+		contentPane.add(button_6);
+		
+		JButton button_7 = new JButton("");
+		button_7.setBounds(296, 12, 90, 65);
+		contentPane.add(button_7);
+		
+		JButton button_8 = new JButton("");
+		button_8.setBounds(296, 89, 90, 65);
+		contentPane.add(button_8);
+		
+		JButton button_9 = new JButton("");
+		button_9.setBounds(296, 166, 90, 65);
+		contentPane.add(button_9);
+		
+		
+	
+		
+		
+	}
+}
