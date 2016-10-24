@@ -1,0 +1,97 @@
+package nikquiz;
+
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.EventQueue;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class ansframe extends JFrame {
+
+	private JPanel contentPane;
+	private String correctAns;
+	private JButton orgbutton;
+	private JButton button;
+	private String imageName;
+	
+	private JTextField textField;
+	
+	private void checkyourAns(){
+		String yourAns = textField.getText();
+		if(correctAns.equalsIgnoreCase(yourAns)){
+			JOptionPane.showMessageDialog(this, "Correct Answer");
+			//orgbutton.setEnabled(false);
+			this.setVisible(true);
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(this, "Wrong Answer");
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		
+//					ansframe frame = new ansframe();
+//					frame.setVisible(true);
+			
+	}
+
+	
+	
+	
+	public ansframe(String correctAns, String imageName, JButton button) {
+		this.correctAns= correctAns;
+		this.button= new JButton("");
+		//this.orgbutton=orgbutton;
+		this.button.setIcon(new ImageIcon(ansframe.class.getResource(imageName)));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 370);
+		getContentPane().setLayout(null);
+		this.button.setBounds(105, 20, 147, 131);
+		//contentPane.add(this, button);
+		
+		
+		textField = new JTextField();
+		textField.setBounds(97, 131, 274, 52);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Type Ans Here");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(97, 53, 274, 27);
+		getContentPane().add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("Submit");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				checkyourAns();
+			}
+		});
+		btnNewButton.setBounds(97, 244, 117, 29);
+		getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Next");
+		btnNewButton_1.setBounds(256, 244, 117, 29);
+		getContentPane().add(btnNewButton_1);
+		
+		
+		
+		
+
+		
+		
+		
+	}
+
+}
